@@ -11,7 +11,7 @@ GraphNode::~GraphNode()
     //// STUDENT CODE
     ////
 
-    // delete _chatBot; 
+    // delete _chatBot;   // Task 0
 
     ////
     //// EOF STUDENT CODE
@@ -27,10 +27,17 @@ void GraphNode::AddEdgeToParentNode(GraphEdge *edge)
     _parentEdges.push_back(edge);
 }
 
+//Task 3
 void GraphNode::AddEdgeToChildNode(GraphEdge *edge)
 {
     _childEdges.push_back(edge);
 }
+/*void GraphNode::AddEdgeToChildNode(std::unique_ptr<GraphEdge> edge)
+{
+    _childEdges.push_back(std::move(edge));
+}*/
+
+
 
 //// STUDENT CODE
 ////

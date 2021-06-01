@@ -49,9 +49,10 @@ ChatBot::ChatBot(int v){}
 
 //// STUDENT CODE
 ////
-/*Chatbot::ChatBot(const ChatBot &source)             // Constructor
+/*Chatbot::ChatBot(const ChatBot &source)             // Copy Constructor
 {
     std::cout << "ChatBot Copy Constructor" << std::endl;
+    
     _currentNode = source._currentNode;
     _chatLogic = source._chatLogic;
     _rootNode = source._rootNode;

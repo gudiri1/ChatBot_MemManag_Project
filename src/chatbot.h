@@ -33,11 +33,14 @@ public:
     //// STUDENT CODE
     ////
     //ChatBot(const ChatBot &source);    // Copy Constructor
-    ChatBot(const ChatBot &source)             // Constructor
+    ChatBot(const ChatBot &source)             // Copy Constructor
     {
         std::cout << "ChatBot Copy Constructor" << std::endl;
 
-        _image = source._image;
+        
+        _image = new wxBitmap();
+        //*_image = source._image;
+
         _currentNode = source._currentNode;
         _chatLogic = source._chatLogic;
         _rootNode = source._rootNode;
@@ -51,6 +54,8 @@ public:
 
         //delete _image;
 
+        //_image = new wxBitmap();
+        
         _image = source._image;
         _currentNode = source._currentNode;
         _chatLogic = source._chatLogic;
@@ -90,6 +95,8 @@ public:
         source._currentNode = nullptr;
         source._chatLogic = nullptr;
         source._rootNode = nullptr;
+
+        return *this;
 
 
     }

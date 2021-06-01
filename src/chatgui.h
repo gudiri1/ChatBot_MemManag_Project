@@ -17,6 +17,7 @@ private:
     //// STUDENT CODE
     ////
 
+    // Task 1
     //ChatLogic *_chatLogic;
     std::unique_ptr<ChatLogic> _chatLogic;
 
@@ -29,7 +30,7 @@ public:
     ~ChatBotPanelDialog();
 
     // getter / setter
-    //ChatLogic *GetChatLogicHandle() { return _chatLogic; }
+    //ChatLogic *GetChatLogicHandle() { return _chatLogic; }   // Task 1
     ChatLogic *GetChatLogicHandle() { return _chatLogic.get(); }
 
     // events
