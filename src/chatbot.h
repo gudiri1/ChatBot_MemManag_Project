@@ -32,31 +32,20 @@ public:
 
     //// STUDENT CODE
     ////
-    //ChatBot(const ChatBot &source);    // Copy Constructor
-    ChatBot(const ChatBot &source)             // Copy Constructor
-    {
-        std::cout << "ChatBot Copy Constructor" << std::endl;
+    ChatBot(const ChatBot &source);    // Copy Constructor
 
-        
-        _image = new wxBitmap();
-        //*_image = source._image;
-
-        _currentNode = source._currentNode;
-        _chatLogic = source._chatLogic;
-        _rootNode = source._rootNode;
-        
-    }
     
     ChatBot &operator=(const ChatBot &source)
     {
         std::cout << "ChatBot Copy Assignment Operator" << std::endl;
         if (this == &source) return *this;
 
-        //delete _image;
+        delete _image;
 
         //_image = new wxBitmap();
         
         _image = source._image;
+        
         _currentNode = source._currentNode;
         _chatLogic = source._chatLogic;
         _rootNode = source._rootNode;

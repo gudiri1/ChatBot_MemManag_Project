@@ -3,10 +3,11 @@
 #include <algorithm>
 #include <ctime>
 
+#include "chatbot.h"
 #include "chatlogic.h"
 #include "graphnode.h"
 #include "graphedge.h"
-#include "chatbot.h"
+
 
 // Udacity Project
 
@@ -49,15 +50,19 @@ ChatBot::ChatBot(int v){}
 
 //// STUDENT CODE
 ////
-/*Chatbot::ChatBot(const ChatBot &source)             // Copy Constructor
-{
-    std::cout << "ChatBot Copy Constructor" << std::endl;
-    
-    _currentNode = source._currentNode;
-    _chatLogic = source._chatLogic;
-    _rootNode = source._rootNode;
-    _image = wxBitmap(*source._image);
-}*/
+    ChatBot(const ChatBot &source)             // Copy Constructor
+    {
+        std::cout << "ChatBot Copy Constructor" << std::endl;
+
+        
+        _image = new wxBitmap();
+        *_image = *source._image;
+
+        _currentNode = source._currentNode;
+        _chatLogic = source._chatLogic;
+        _rootNode = source._rootNode;
+        
+    }
 
 /*ChatBot::ChatBot &operator=(const ChatBot &source)
 {
