@@ -32,8 +32,20 @@ public:
 
     //// STUDENT CODE
     ////
-    ChatBot(const ChatBot &source);    // Copy Constructor
+    //ChatBot(const ChatBot &source);    // Copy Constructor
+        ChatBot(const ChatBot &source)             // Copy Constructor
+    {
+        std::cout << "ChatBot Copy Constructor" << std::endl;
 
+        
+        _image = new wxBitmap();
+        *_image = *source._image;
+
+        _currentNode = source._currentNode;
+        _chatLogic = source._chatLogic;
+        _rootNode = source._rootNode;
+        
+    }
     
     ChatBot &operator=(const ChatBot &source)
     {
